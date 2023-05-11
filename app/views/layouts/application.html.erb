@@ -3,14 +3,21 @@
   <head>
     <title>LeitnerLearning</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application" %>
     <%= javascript_pack_tag "application" %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class='font-roboto h-screen overflow-scroll'>
+    <div class='fixed top-0 left-0 w-full h-10 sm:h-16'>
+      <%= render 'shared/header' %>
+    </div>
+    <main class='px-7 sm:px-36 mt-10 sm:mt-16 box-border min-h-[calc(100vh-2.5rem)] sm:min-h-[calc(100vh-4rem)] overflow-scroll'>
+      <%= yield %>
+    </main>
   </body>
 </html>
