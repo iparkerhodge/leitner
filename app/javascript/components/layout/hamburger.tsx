@@ -6,7 +6,7 @@ interface HamburgerProps {
 
 const Hamburger: React.FC<HamburgerProps> = ({ open }) => {
     const classes = {
-        div: 'w-7 h-5 relative rotate-0 transition-transform duration-500 top-0.5 sm:top-5',
+        div: 'w-7 h-5 relative rotate-0 transition-transform duration-500 top-0.5 sm:top-3.5',
         span: 'block h-1 w-full rounded-[9px] absolute origin-center origin-left transition-all duration-250'
     }
 

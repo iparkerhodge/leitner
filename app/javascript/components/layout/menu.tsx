@@ -23,7 +23,7 @@ const Menu = () => {
             </div>
             <div>
                 {/* desktop */}
-                <div className={`hidden sm:inline absolute top-0 left-0 h-screen bg-[#58D2CE] z-0 transition-[width] ${open ? 'w-36' : 'w-0'}`}>
+                <div className={`hidden sm:inline absolute top-0 left-0 h-screen bg-[#58D2CE] z-0 transition-[width] ${open ? 'w-' : 'w-0'}`}>
                     <p className={`transition-opacity ${open ? 'opacity-100' : 'opacity-0'}`}>hello</p>
                 </div>
                 {/* mobile */}
