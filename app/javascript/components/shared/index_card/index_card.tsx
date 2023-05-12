@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import IndexCardFront from './index_card_front';
 import IndexCardBack from './index_card_back';
+import IndexCardFront from './index_card_front';
 
 interface IndexCardProps {
     frontText: string;
@@ -24,15 +24,15 @@ const IndexCard: React.FC<IndexCardProps> = ({ heightPx, heightRem, frontText, b
     }
 
     const classes = {
-        container: `bg-white flex flex-col relative drop-shadow`
+        container: `bg-white flex flex-col relative drop-shadow rounded`
     }
 
 
     return (
         <div className={classes.container} style={{ height: height, width: width }} onClick={handleClick}>
             {side === 0
-                ? <IndexCardFront text={frontText} rowHeight={calculateRowSize(height)} />
-                : <IndexCardBack />
+                ? <IndexCardFront />
+                : <IndexCardBack text={frontText} rowHeight={calculateRowSize(height)} />
             }
         </div>
     )
