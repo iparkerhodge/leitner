@@ -3,14 +3,14 @@ import React from 'react'
 const IndexCard = () => {
     const classes = {
         // see app/assets/stylesheets/application.css
-        card: 'flip-card rounded mx-2',
-        inner: 'flip-card-inner rounded',
-        front: 'flip-card-front bg-white flex justify-center items-center rounded font-sharpie',
-        back: 'flip-card-back flex justify-center items-center rounded font-sharpie bg-white',
-        backContainer: 'relative h-full w-full bg-white rounded',
-        lineTop: 'absolute w-full h-0.5 bg-red-600 rounded opacity-70',
-        line: 'absolute w-full h-0.5 bg-blue-600 rounded opacity-40',
-        p: 'text-2xl'
+        card: 'flip-card rounded mx-2 z-10',
+        inner: 'flip-card-inner rounded z-10',
+        front: 'flip-card-front bg-white flex justify-center items-center rounded font-sharpie z-10',
+        back: 'flip-card-back flex justify-center items-center rounded font-sharpie bg-white z-10',
+        backContainer: 'relative h-full w-full bg-white rounded z-10',
+        lineTop: 'absolute w-full h-0.5 bg-red-600 rounded opacity-70 z-10',
+        line: 'absolute w-full h-0.5 bg-blue-600 rounded opacity-40 z-10',
+        p: 'text-2xl z-10'
     }
     return (
         <div className={classes.card}>

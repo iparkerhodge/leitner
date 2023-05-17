@@ -12,7 +12,7 @@ const Home = () => {
         <div className={classes.container}>
             <div className={classes.hero}>
                 <div className='w-full flex items-center'>
-                    <div className='w-1/2 flex justify-center'>
+                    <div className='w-1/2 flex justify-center z-10'>
                         <IndexCard />
                     </div>
                     <div className='w-1/2 font-slab z-10'>
