@@ -31,7 +31,7 @@
     text-align: center;
     transition: transform ease-in-out 0.5s;
     transform-style: preserve-3d;
-    border: 1px solid #f1f1f1;
+    transform: rotateZ(-10deg);
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
@@ -50,15 +50,7 @@
     backface-visibility: hidden;
 }
 
-/* Style the front side (fallback if image is missing) */
-.flip-card-front {
-    background-color: #bbb;
-    color: black;
-}
-
 /* Style the back side */
 .flip-card-back {
-    background-color: dodgerblue;
-    color: white;
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) rotateZ(-10deg);
 }

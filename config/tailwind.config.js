@@ -10,7 +10,9 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
-        roboto: ['roboto']
+        roboto: ['roboto'],
+        sharpie: ['Permanent Marker'],
+        slab: ['Roboto Slab']
       }
     },
   },
