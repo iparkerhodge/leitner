@@ -15,11 +15,11 @@ const Menu = () => {
                 {/* Hamburger */}
                 <div id='hamburger' className='fixed top-2.5 left-[3.75rem] z-50'>
                     {/* mobile */}
-                    <div className='inline sm:hidden'>
+                    <div className='inline sm:hidden cursor-pointer'>
                         <Hamburger open={open} onClick={handleClick} />
                     </div>
                     {/* desktop */}
-                    <div className='hidden sm:inline'>
+                    <div className='hidden sm:inline cursor-pointer'>
                         <Hamburger open={open} onClick={handleClick} />
                     </div>
                 </div>
@@ -29,8 +29,8 @@ const Menu = () => {
                         <MenuOptions open={open} />
                     </div>
                     {/* mobile */}
-                    <div className={`drop-shadow-lg inline sm:hidden absolute top-10 left-0 w-screen bg-[#58D2CE] transition-[height] ${open ? 'h-10' : 'h-0'}`}>
-                        <p className={`transition-opacity ${open ? 'opacity-100' : 'opacity-0'}`}>hello</p>
+                    <div className={`drop-shadow-lg inline sm:hidden absolute top-10 left-0 w-screen bg-[#58D2CE] transition-[height] ${open ? 'h-fit' : 'h-0'}`}>
+                        <MenuOptions open={open} />
                     </div>
                 </div>
             </div>
