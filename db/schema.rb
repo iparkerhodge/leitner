@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_21_184052) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_21_185605) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -37,8 +37,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_21_184052) do
     t.datetime "confirmed_at"
     t.string "password_digest", null: false
     t.string "unconfirmed_email"
-    t.string "remember_token", null: false
-    t.index ["remember_token"], name: "index_users_on_remember_token", unique: true
   end
 
   add_foreign_key "active_sessions", "users", on_delete: :cascade

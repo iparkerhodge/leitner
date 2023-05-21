@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   CONFIRMATION_TOKEN_EXPIRATION = 10.minutes
   PASSWORD_RESET_TOKEN_EXPIRATION = 10.minutes
+  MAILER_FROM_EMAIL = 'iparkerhodge@gmail.com'
 
   has_secure_password
 
