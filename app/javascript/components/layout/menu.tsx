@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Hamburger from './hamburger'
 import MenuOptions from './menuOptions'
 
-const Menu = () => {
+const Menu = ({ user }) => {
     const [open, setOpen] = useState(false)
 
     const handleClick: React.MouseEventHandler<HTMLDivElement> = (e) => {
@@ -26,11 +26,11 @@ const Menu = () => {
                 <div>
                     {/* desktop */}
                     <div className={`drop-shadow-lg hidden sm:inline absolute top-0 left-0 h-screen bg-[#58D2CE] z-0 transition-[width] ${open ? 'w-36' : 'w-0'}`}>
-                        <MenuOptions open={open} />
+                        <MenuOptions open={open} user={user} />
                     </div>
                     {/* mobile */}
                     <div className={`drop-shadow-lg inline sm:hidden absolute top-10 left-0 w-screen bg-[#58D2CE] transition-[height] ${open ? 'h-fit' : 'h-0'}`}>
-                        <MenuOptions open={open} />
+                        <MenuOptions open={open} user={user} />
                     </div>
                 </div>
             </div>
