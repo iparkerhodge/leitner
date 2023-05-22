@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :confirmations, only: %i[create edit new], param: :confirmation_token
 
   # Sessions
-  post 'login', to: 'sessions#create'
+  post 'login', to: 'sessions#create', defaults: { format: :json }
   delete 'logout', to: 'sessions#destroy'
   get 'login', to: 'sessions#new'
 
