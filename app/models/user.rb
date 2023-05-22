@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   CONFIRMATION_TOKEN_EXPIRATION = 10.minutes
   PASSWORD_RESET_TOKEN_EXPIRATION = 10.minutes
-  MAILER_FROM_EMAIL = 'iparkerhodge@gmail.com'
+  MAILER_FROM_EMAIL = 'iparkerhodge@gmail.com'.freeze
 
   has_secure_password
 
@@ -77,6 +77,7 @@ class User < ApplicationRecord
     raise ArgumentError, 'One or more finder arguments are required' if identifiers.empty?
 
     if (record = find_by(identifiers))
+      puts 'in da block'
       record if passwords.count { |name, value| record.public_send(:"authenticate_#{name}", value) } == passwords.size
     else
       new(passwords)

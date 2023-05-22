@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   get '/manage', to: 'manage#index'
 
   # Sign Up
-  post 'sign_up', to: 'users#create'
-  get 'sign_up', to: 'users#new'
+  post 'signup', to: 'users#create', defaults: { format: :json }
+  get 'signup', to: 'users#new'
 
   # Confirmations
   resources :confirmations, only: %i[create edit new], param: :confirmation_token

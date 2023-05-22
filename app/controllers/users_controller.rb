@@ -3,12 +3,21 @@ class UsersController < ApplicationController
   before_action :redirect_if_authenticated, only: %i[create new]
 
   def create
+    existing_user = User.find_by email: params[:user][:email]
+    if existing_user
+      render status: :unprocessable_entity,
+             json: { error: 'There was an erorr in the signup process. Please try again.' }
+      return
+    end
+
     @user = User.new(create_user_params)
     if @user.save
       @user.send_confirmation_email!
-      redirect_to root_path, notice: 'Please check your email for confirmation instructions.'
+      render status: 200, json: { redirect: new_confirmation_path.to_s },
+             notice: 'Please check your email for confirmation instructions.'
     else
-      render :new, status: :unprocessable_entity
+      render status: :unprocessable_entity,
+             json: { error: 'There was an erorr in the signup process. Please try again.' }
     end
   end
 

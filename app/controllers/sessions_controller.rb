@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
     if @user
       if @user.unconfirmed?
-        redirect_to new_confirmation_path, alert: 'Incorrect email or password.'
+        render status: 200, json: { redirect: new_confirmation_path.to_s }, alert: 'Incorrect email or password.'
       else
         after_login_path = session[:user_return_to] || root_path
         active_session = login @user
@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
         render status: 200, json: { redirect: after_login_path.to_s }
       end
     else
-      render status: :unauthorized,
+      render status: :unprocessable_entity,
              json: { error: 'Unable to verify the credentials you provided.' }
     end
   end
