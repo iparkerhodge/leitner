@@ -1,4 +1,5 @@
 import React from 'react'
+import { logout } from '../auth/api.ts'
 
 interface MenuOptions {
     open: boolean
@@ -6,6 +7,10 @@ interface MenuOptions {
 }
 
 const MenuOptions: React.FC<MenuOptions> = ({ open, user }) => {
+    const handleClick = async () => {
+        const _res = await logout()
+    }
+
     return (
         <div className={`flex flex-col items-center py-4 sm:pt-16 text-white font-bold font-slab transition-opacity z-40 ${open ? 'opacity-100' : 'opacity-0'}`}>
             {user &&
@@ -15,7 +20,7 @@ const MenuOptions: React.FC<MenuOptions> = ({ open, user }) => {
                 </div>
             }
             {user
-                ? <a href='/login' className='cursor-pointer'>Logout</a>
+                ? <a href='/login' className='cursor-pointer' onClick={handleClick}>Logout</a>
                 : <>
                     <a href='/signup' className='cursor-pointer'>Sign Up</a>
                     <a href='/login' className='cursor-pointer'>Login</a>

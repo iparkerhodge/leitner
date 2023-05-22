@@ -15,3 +15,7 @@ export const login = (user: IUser) => {
 export const signup = (user: IUser) => {
     return http.post<IUser>('/signup', user)
 }
+
+export const logout = () => {
+    return http.delete('/logout', {})
+}
